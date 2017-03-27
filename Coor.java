@@ -40,6 +40,12 @@ public class Coor{
 	setZ(z);
 	setL(1);
     }
+    public Coor(double[] vals){
+	setX(vals[0]);
+	setY(vals[1]);
+	setZ(vals[2]);
+	setL(1);
+    }
     public Coor(){
 	this(1,1,1);
     }

@@ -513,7 +513,8 @@ public class Grafix{
     public void clear(){
 	edges = new LinkedList<PointList>();
     }
-    
+    public 
+
     //Write function copies the pixels to image file
     public void write(String name){
 	try{
