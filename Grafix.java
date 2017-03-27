@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.lang.Math;
 //Curves assignement starts at line 413
-
+//3d assignment starts at line 513
 public class Grafix{
     //instance variables of Grafix
     private int width;
@@ -509,6 +509,11 @@ public class Grafix{
 	addEdge(p);
     }
     //end curves assignment
+    //start 3d assignment
+    public void clear(){
+	edges = new LinkedList<PointList>();
+    }
+    
     //Write function copies the pixels to image file
     public void write(String name){
 	try{

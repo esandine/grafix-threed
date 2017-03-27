@@ -60,6 +60,8 @@ public class Parser{
 		}else if(command.equals("bezier")){
                     args = new Scanner(s.nextLine());
                     g.drawBezier(args.nextDouble(),args.nextDouble(),args.nextDouble(),args.nextDouble(),args.nextDouble(),args.nextDouble(),args.nextDouble(),args.nextDouble());
+		}else if(command.equals("clear")){
+		    g.clear();
 		}
 	    }
 	}catch(FileNotFoundException e){
