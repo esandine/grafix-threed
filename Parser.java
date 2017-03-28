@@ -62,6 +62,11 @@ public class Parser{
                     g.drawBezier(args.nextDouble(),args.nextDouble(),args.nextDouble(),args.nextDouble(),args.nextDouble(),args.nextDouble(),args.nextDouble(),args.nextDouble());
 		}else if(command.equals("clear")){
 		    g.clear();
+                }else if(command.equals("box")){
+                    args = new Scanner(s.nextLine());
+                    g.addBox(args.nextDouble(),args.nextDouble(),args.nextDouble(),args.nextDouble(),args.nextDouble(),args.nextDouble());
+		}else if(command.equals("print")){
+		    g.printEdgeList();
 		}
 	    }
 	}catch(FileNotFoundException e){

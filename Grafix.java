@@ -47,6 +47,11 @@ public class Grafix{
 	}
 	addEdge(p);
     }
+    public void addPoint(Coor c){
+	PointList p = new PointList();
+	p.addCoor(c);
+	addEdge(p);
+    }
     public void resetPixels(){
 	for(int i = 0; i< width; i++){
             for(int j = 0; j< height; j++){
@@ -513,7 +518,23 @@ public class Grafix{
     public void clear(){
 	edges = new LinkedList<PointList>();
     }
-    public 
+    public void addBox(double x, double y, double z,double w,double h,double d){
+	LinkedList<Coor> vertices = new LinkedList<Coor>();
+	Coor c;
+	vertices.add(new Coor(x, y, z));
+	vertices.add(new Coor(x, y, z-d));
+	vertices.add(new Coor(x, y-h, z));
+	vertices.add(new Coor(x, y-h, z-d));
+	vertices.add(new Coor(x+w, y, z));
+	vertices.add(new Coor(x+w, y, z-d));
+	vertices.add(new Coor(x+w, y-h, z));
+	vertices.add(new Coor(x+w, y-h, z-d));
+	for(int i = 0; i < vertices.size(); i++){
+	    c = vertices.pop();
+	    addPoint(c);
+	    vertices.add(c);
+	}
+    }
 
     //Write function copies the pixels to image file
     public void write(String name){
