@@ -535,7 +535,20 @@ public class Grafix{
 	    vertices.add(c);
 	}
     }
-
+    public void addSphere(double cx, double cy, double cz, double r, int steps){
+	LinkedList<Coor> sphere = new LinkedList<Coor>();
+	double theta;
+	double phi;
+	for(int i = 0; i <= steps; i++){
+	    theta = Math.PI*i/steps;
+	    for(int j = 0; j <= steps; j++){
+		phi = 2*Math.PI*i/steps;
+		sphere.add(new Coor(r*Math.sin(theta),
+				    r*Math.sin(theta)*Math.cos(phi),
+				    r*Math.sin(theta)*Math.sin(phi)));
+	    }
+	}
+    }
     //Write function copies the pixels to image file
     public void write(String name){
 	try{
