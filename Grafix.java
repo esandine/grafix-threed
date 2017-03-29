@@ -537,17 +537,25 @@ public class Grafix{
     }
     public void addSphere(double cx, double cy, double cz, double r, int steps){
 	LinkedList<Coor> sphere = new LinkedList<Coor>();
+	Coor c;
 	double theta;
 	double phi;
 	for(int i = 0; i <= steps; i++){
-	    theta = Math.PI*i/steps;
+	    theta = 2*Math.PI*i/steps;
 	    for(int j = 0; j <= steps; j++){
-		phi = 2*Math.PI*i/steps;
-		sphere.add(new Coor(r*Math.sin(theta),
-				    r*Math.sin(theta)*Math.cos(phi),
-				    r*Math.sin(theta)*Math.sin(phi)));
+		phi = Math.PI*j/steps;
+		sphere.add(new Coor(r*Math.cos(theta)+cx,
+				    r*Math.sin(theta)*Math.cos(phi)+cy,
+				    r*Math.sin(theta)*Math.sin(phi)+cz));
+		System.out.println("Theta: "+theta+"Phi: "+phi);
 	    }
 	}
+	for(int i = 0; i < sphere.size(); i++){
+            c = sphere.pop();
+            addPoint(c);
+            sphere.add(c);
+        }
+
     }
     //Write function copies the pixels to image file
     public void write(String name){
