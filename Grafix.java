@@ -541,9 +541,9 @@ public class Grafix{
 	double theta;
 	double phi;
 	for(int i = 0; i <= steps; i++){
-	    theta = 2*Math.PI*i/steps;
+	    phi = Math.PI*i/steps;
 	    for(int j = 0; j <= steps; j++){
-		phi = Math.PI*j/steps;
+		theta = 2*Math.PI*j/steps;
 		sphere.add(new Coor(r*Math.cos(theta)+cx,
 				    r*Math.sin(theta)*Math.cos(phi)+cy,
 				    r*Math.sin(theta)*Math.sin(phi)+cz));
@@ -556,6 +556,27 @@ public class Grafix{
             sphere.add(c);
         }
 
+    }
+    public void addTorus(double cx, double cy, double cz, double r1, double r2, int steps){
+        LinkedList<Coor> torus = new LinkedList<Coor>();
+	Coor c;
+        double theta;
+        double phi;
+	for(int i = 0; i <= steps; i++){
+            phi = 2*Math.PI*i/steps;
+            for(int j = 0; j <= steps; j++){
+                theta = 2*Math.PI*j/steps;
+                torus.add(new Coor(Math.cos(phi)*(r2*Math.cos(theta)+r1)+cx,
+                                    r2*Math.sin(theta)+cy,
+				   -Math.sin(theta)*(r2*Math.cos(theta)+r1)+cz));
+                System.out.println("Theta: "+theta+"Phi: "+phi);
+            }
+        }
+        for(int i = 0; i < torus.size(); i++){
+            c = torus.pop();
+            addPoint(c);
+            torus.add(c);
+        }
     }
     //Write function copies the pixels to image file
     public void write(String name){

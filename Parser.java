@@ -70,7 +70,10 @@ public class Parser{
                 }else if(command.equals("sphere")){
 		    args = new Scanner(s.nextLine());
                     g.addSphere(args.nextDouble(),args.nextDouble(),args.nextDouble(),args.nextDouble(),100);
-                }
+		}else if(command.equals("torus")){
+                    args = new Scanner(s.nextLine());
+                    g.addTorus(args.nextDouble(),args.nextDouble(),args.nextDouble(),args.nextDouble(),args.nextDouble(),100);
+		}
 	    }
 	}catch(FileNotFoundException e){
 	    System.out.println("NO FILE HATH BEN FOUND");

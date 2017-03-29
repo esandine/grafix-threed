@@ -1,5 +1,5 @@
-sphere
-100 100 100 100
+torus
+300 300 300 200 100
 rotate
 x 45
 apply
