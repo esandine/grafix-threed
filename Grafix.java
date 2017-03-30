@@ -568,7 +568,7 @@ public class Grafix{
                 theta = 2*Math.PI*j/steps;
                 torus.add(new Coor(Math.cos(phi)*(r2*Math.cos(theta)+r1)+cx,
                                     r2*Math.sin(theta)+cy,
-				   -Math.sin(theta)*(r2*Math.cos(theta)+r1)+cz));
+				   -Math.sin(phi)*(r2*Math.cos(theta)+r1)+cz));
                 System.out.println("Theta: "+theta+"Phi: "+phi);
             }
         }
