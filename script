@@ -1,3 +1,25 @@
 torus
 300 300 300 200 50
+sphere
+100 100 100 75
+box
+200 400 0 100 100 100
+box
+200 400 0 100 100 100
+box
+400 400 0 100 100 100
+box
+200 150 0 100 100 100
+box
+9 450 0 100 100 100
+ident
+rotate
+x 10
+rotate
+y 10
+rotate
+z 10
+apply
 display
+save
+threed.jpg
